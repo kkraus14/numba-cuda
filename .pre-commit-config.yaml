@@ -1,6 +1,16 @@
+ci:
+    autofix_commit_msg: |
+      [pre-commit.ci] auto code formatting
+    autofix_prs: false
+    autoupdate_branch: ''
+    autoupdate_commit_msg: '[pre-commit.ci] pre-commit autoupdate'
+    autoupdate_schedule: quarterly
+    skip: []
+    submodules: false
+
 repos:
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v5.0.0 # Use the latest version or a specific tag
+  rev: cef0300fd0fc4d2a87a85fa2093c6b283ea36f4b  # frozen: v5.0.0
   hooks:
     - id: check-added-large-files
     - id: check-ast
@@ -16,7 +26,7 @@ repos:
     - id: mixed-line-ending
       args: ['--fix=lf']
 - repo: https://github.com/astral-sh/ruff-pre-commit
-  rev: v0.11.2
+  rev: 3d44372123ca5e8617fdb65d9f11facd159b9e95  # frozen: v0.12.3
   hooks:
     - id: ruff
       args: [--fix]
